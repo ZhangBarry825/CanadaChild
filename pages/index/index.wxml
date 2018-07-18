@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<swiper class='swiper' indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item>
+      <view class="slide-image" style="background-image:url('{{item}}')" > </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="menu">
+</view>
+
