@@ -13,5 +13,6 @@
             <view class="image" mode="aspectFill" style="background-image: url('../../assets/images/list-none.png')" ></view>
             <view class="text">暂无数据</view>
         </view>
+
     </view>
 </view>

@@ -8,7 +8,10 @@ Page({
     data: {
         type       : '',
         articleList: null,
-        baseUrl:app.globalData.baseUrl
+        baseUrl:app.globalData.baseUrl,
+        page:1,
+        toastHidden:false,
+
     },
     goDetail(event){
         wx.navigateTo({
@@ -90,7 +93,46 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+        let that = this
+        console.log('到底了')
+        wx.showLoading({
+            title: '加载中',
+        })
+        wx.request({
+            url    : app.globalData.baseUrl + '/home/article/lists',
+            method : 'GET',
+            data   : {
+                type     : that.data.type,
+                page_num : that.data.page+1,
+                page_size: 10
+            },
+            header : {
+                'content-type': 'application/form-data'
+            },
+            success: function (res) {
+                console.log(res.data);
 
+                if (res.data.code === 200) {
+                    console.log(res.data)
+                    let newValue=that.data.articleList
+                    newValue=newValue.concat(res.data.data.rows)
+                    console.log('newValue:')
+                    console.log(newValue)
+                    that.setData({
+                        articleList : newValue,
+                        page:that.data.page+1
+                    })
+                }
+                wx.hideLoading()
+                if(res.data.data.rows.length<1){
+                    wx.showToast({
+                        title: '已经加载完毕',
+                        icon: 'success',
+                        duration: 2000
+                    })
+                }
+            }
+        });
     },
 
     /**
