@@ -68,6 +68,7 @@
       width: 100%;
       .item{
         width: 100%;
+        box-sizing: border-box;
         padding:~"20rpx";
         border-bottom: 1px solid ghostwhite;
         display: flex;
@@ -113,15 +114,17 @@
             color: #999999;
           }
           .type{
-            width: ~"100rpx";
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            align-self: flex-start;
             border-radius: ~"5rpx";
             font-size: ~"20rpx";
             color: #666666;
             padding-bottom: ~"3rpx";
+            padding-left: ~"10rpx";
+            padding-right: ~"10rpx";
             background-color: gainsboro;
           }
         }

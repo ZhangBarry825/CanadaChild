@@ -2,46 +2,46 @@
 <view class="page">
     <swiper class='swiper' indicator-dots="{{indicatorDots}}"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{imgUrls}}" wx:key="key">
+        <block wx:for="{{pictureArticle.rows}}" wx:key="key" wx:for-item="item">
             <swiper-item>
                 <!--<view class="slide-image" style="background-image:url('{{item}}')"></view>-->
-                <image class="slide-image" mode="aspectFill" src="{{item}}" ></image>
+                <image class="slide-image" mode="aspectFill" src="{{baseUrl}}{{item.cover}}" ></image>
             </swiper-item>
         </block>
     </swiper>
     <view class="menu">
         <view class="menu-line">
-            <view class="item" bindtap="goOne">
+            <view class="item" bindtap="goOne" data-type="赴加生子福利">
                 <image class="pic" mode="aspectFill" src="/assets/images/p1.png"></image>
                 <view class="title">赴加生子福利</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="成功案例">
                 <image class="pic" mode="aspectFill" src="/assets/images/p2.png"></image>
                 <view class="title">成功案例</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="月子中心">
                 <image class="pic" mode="aspectFill" src="/assets/images/p3.png"></image>
                 <view class="title">月子中心</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="政策解析">
                 <image class="pic" mode="aspectFill" src="/assets/images/p4.png"></image>
-                <view class="title">政策解读</view>
+                <view class="title">政策解析</view>
             </view>
         </view>
-        <view class="menu-line">
-            <view class="item">
+        <view class="menu-line" >
+            <view class="item" bindtap="goOne" data-type="赴加生子费用">
                 <image class="pic" mode="aspectFill" src="/assets/images/p5.png"></image>
                 <view class="title">赴加生子费用</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="赴加攻略">
                 <image class="pic" mode="aspectFill" src="/assets/images/p6.png"></image>
                 <view class="title">赴加攻略</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="赴加签证">
                 <image class="pic" mode="aspectFill" src="/assets/images/p7.png"></image>
                 <view class="title">赴加签证</view>
             </view>
-            <view class="item">
+            <view class="item" bindtap="goOne" data-type="大温介绍">
                 <image class="pic" mode="aspectFill" src="/assets/images/p8.png"></image>
                 <view class="title">大温介绍</view>
             </view>
@@ -53,41 +53,19 @@
             <view class="right">最新资讯</view>
         </view>
         <view class="content">
-            <view class="item">
+            <view class="item" bindtap="goDetail" data-id="{{item.id}}" data-type="{{item.type}}" wx:for="{{latestArticle.rows}}" wx:key="key" wx:for-item="item">
                 <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
-                <image class="pic" mode="aspectFill" src ="/assets/images/item-pic.png"></image>
+                <image class="pic" wx:if="{{item.cover}}" mode="aspectFill" src ="{{baseUrl}}{{item.cover}}" ></image>
+                <image class="pic" wx:if="{{!item.cover}}" mode="aspectFill" src ="/assets/images/item-pic.png" ></image>
                 <view class="detail">
-                    <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
-                    <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
-                    <text class="type">成功案例</text>
+                    <view class="title">{{item.title}}</view>
+                    <view class="description">{{item.description}}</view>
+                    <view class="type">{{item.type}}</view>
                 </view>
             </view>
-            <view class="item">
-                <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
-                <image class="pic" mode="aspectFill" src ="/assets/images/item-pic.png"></image>
-                <view class="detail">
-                    <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
-                    <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
-                    <text class="type">成功案例</text>
-                </view>
-            </view>
-            <view class="item">
-                <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
-                <image class="pic" mode="aspectFill" src ="/assets/images/item-pic.png"></image>
-                <view class="detail">
-                    <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
-                    <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
-                    <text class="type">成功案例</text>
-                </view>
-            </view>
-            <view class="item">
-                <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
-                <image class="pic" mode="aspectFill" src ="/assets/images/item-pic.png"></image>
-                <view class="detail">
-                    <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
-                    <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
-                    <text class="type">成功案例</text>
-                </view>
+            <view class="list-none" wx:if="{{!latestArticle.rows}}">
+                <view class="image" mode="aspectFill" style="background-image: url('../../assets/images/list-none.png')" ></view>
+                <view class="text">暂无数据</view>
             </view>
         </view>
     </view>
