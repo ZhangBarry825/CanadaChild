@@ -1,39 +1,18 @@
-// pages/index/index.js
+// pages/detail/detail.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '/assets/images/s0.jpg',
-      '/assets/images/s1.jpg',
-      '/assets/images/s2.jpg'
-    ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000
+  
   },
 
-    call(){
-        wx.makePhoneCall({
-            phoneNumber: '10086'
-        })
-    },
-
-    msg(){
-    document.getElementById('msg').onclick
-    },
-    goOne(){
-        wx.navigateTo({
-            url: '/pages/items-one/items-one'
-        })
-    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**

@@ -1,0 +1,37 @@
+<!--pages/items-one/items-one.wxml-->
+<view class="page">
+    <view class="content">
+        <view class="item">
+            <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
+            <image class="pic" mode="aspectFill" src="/assets/images/item-pic.png"></image>
+            <view class="detail">
+                <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
+                <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
+            </view>
+        </view>
+        <view class="item">
+            <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
+            <image class="pic" mode="aspectFill" src="/assets/images/item-pic.png"></image>
+            <view class="detail">
+                <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
+                <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
+            </view>
+        </view>
+        <view class="item">
+            <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
+            <image class="pic" mode="aspectFill" src="/assets/images/item-pic.png"></image>
+            <view class="detail">
+                <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
+                <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
+            </view>
+        </view>
+        <view class="item">
+            <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
+            <image class="pic" mode="aspectFill" src="/assets/images/item-pic.png"></image>
+            <view class="detail">
+                <view class="title">赴美生子还在找淘宝做签证？诚实入诚实入诚实入</view>
+                <view class="description">越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？越来越多人知道赴美生娃的好处，越来越多人在为此准备，你也是其中一个吗？</view>
+            </view>
+        </view>
+    </view>
+</view>

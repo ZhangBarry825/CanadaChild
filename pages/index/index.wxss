@@ -139,7 +139,13 @@
 }
 .page .fixed .item {
   margin-bottom: 20rpx;
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 100%;
+}
+.page .fixed .msg {
+  z-index: 11;
+  opacity: 0;
+  position: absolute;
+  bottom: 30rpx;
 }
