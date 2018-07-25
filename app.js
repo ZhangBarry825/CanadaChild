@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl:'http://canada.barry.umdev.cn'
+    baseUrl:'https://canada-api.luckyme.com.cn'
   }
 })

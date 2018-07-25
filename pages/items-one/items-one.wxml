@@ -2,15 +2,15 @@
 <view class="page">
     <view class="content">
         <view class="item" wx:for="{{articleList}}" wx:for-item="item" wx:key="key" data-id="{{item.id}}" data-type="{{item.type}}" bindtap="goDetail">
-            <view class="pic" wx:if='{{item.cover.length}}' style="background-image: url('{{baseUrl}}{{item.cover}}')"></view>
-            <image class="pic" wx:if='{{!item.cover.length}}'mode="aspectFill" src="/assets/images/item-pic.png"></image>
+            <view class="pic" style="background-image: url('{{baseUrl}}{{item.cover}}')"></view>
+            <!--<image class="pic" wx:if='{{!item.cover.length}}'mode="aspectFill" src="/assets/images/item-pic.png"></image>-->
             <view class="detail">
                 <view class="title">{{item.title}}</view>
                 <view class="description">{{item.description}}</view>
             </view>
         </view>
         <view class="list-none" wx:if="{{!articleList.length}}">
-            <view class="image" mode="aspectFill" style="background-image: url('../../assets/images/list-none.png')" ></view>
+            <image class="image" mode="aspectFill"  src="../../assets/images/list-none.png"></image>
             <view class="text">暂无数据</view>
         </view>
 

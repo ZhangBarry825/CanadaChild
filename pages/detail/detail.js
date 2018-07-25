@@ -36,9 +36,15 @@ Page({
         let that = this
         that.data.type=options.type
         that.data.id=options.id
-        wx.setNavigationBarTitle({
-            title: that.data.type
-        });
+        if(options.type==="轮播图"){
+            wx.setNavigationBarTitle({
+                title: "加拿大温哥华生子"
+            });
+        }else {
+            wx.setNavigationBarTitle({
+                title: that.data.type
+            });
+        }
         wx.request({
             url    : app.globalData.baseUrl + '/home/article/detail',
             method : 'GET',

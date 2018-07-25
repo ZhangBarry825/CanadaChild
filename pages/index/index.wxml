@@ -2,10 +2,10 @@
 <view class="page">
     <swiper class='swiper' indicator-dots="{{indicatorDots}}"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{pictureArticle.rows}}" wx:key="key" wx:for-item="item">
+        <block wx:for="{{pictureArticle.rows}}" wx:key="key" wx:for-item="item" >
             <swiper-item>
                 <!--<view class="slide-image" style="background-image:url('{{item}}')"></view>-->
-                <image class="slide-image" mode="aspectFill" src="{{baseUrl}}{{item.cover}}" ></image>
+                <image class="slide-image" mode="aspectFill" src="{{baseUrl}}{{item.cover}}"   data-id="{{item.id}}" data-type="{{item.type}}"  bindtap="goDetail"></image>
             </swiper-item>
         </block>
     </swiper>
@@ -55,8 +55,8 @@
         <view class="content">
             <view class="item" bindtap="goDetail" data-id="{{item.id}}" data-type="{{item.type}}" wx:for="{{latestArticle.rows}}" wx:key="key" wx:for-item="item">
                 <!--<view class="pic" style="background-image: url('/assets/images/item-pic.png')"></view>-->
-                <image class="pic" wx:if="{{item.cover}}" mode="aspectFill" src ="{{baseUrl}}{{item.cover}}" ></image>
-                <image class="pic" wx:if="{{!item.cover}}" mode="aspectFill" src ="/assets/images/item-pic.png" ></image>
+                <image class="pic" mode="aspectFill" src ="{{baseUrl}}{{item.cover}}" ></image>
+                <!--<image class="pic" wx:if="{{!item.cover}}" mode="aspectFill" src ="/assets/images/item-pic.png" ></image>-->
                 <view class="detail">
                     <view class="title">{{item.title}}</view>
                     <view class="description">{{item.description}}</view>
@@ -64,7 +64,8 @@
                 </view>
             </view>
             <view class="list-none" wx:if="{{!latestArticle.rows}}">
-                <view class="image" mode="aspectFill" style="background-image: url('../../assets/images/list-none.png')" ></view>
+                <!--<view class="image" mode="aspectFill" style="background-image: url(../../assets/images/list-none.png)" ></view>-->
+                <image class="image" mode="aspectFill"  src="../../assets/images/list-none.png"></image>
                 <view class="text">暂无数据</view>
             </view>
         </view>

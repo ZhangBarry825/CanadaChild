@@ -1,8 +1,8 @@
 <!--pages/detail/detail.wxml-->
 <import src="../../html-view/index.wxml" />
 <view class="page">
-    <image class="back" wx:if="{{articleDetail.cover}}" mode="aspectFill" src="{{baseUrl}}{{articleDetail.cover}}"></image>
-    <image class="back" wx:if="{{!articleDetail.cover}}" mode="aspectFill" src="/assets/images/background.jpg"></image>
+    <image class="back" mode="aspectFill" src="{{baseUrl}}{{articleDetail.cover}}"></image>
+    <!--<image class="back" wx:if="{{!articleDetail.cover}}" mode="aspectFill" src="/assets/images/background.jpg"></image>-->
     <view class="detail">
         <view class="title">
             {{articleDetail.title}}
