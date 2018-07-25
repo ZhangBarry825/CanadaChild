@@ -117,6 +117,51 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
+        console.log('下拉刷新')
+        let that = this;
+        //请求轮播图和最新资讯
+        wx.request({
+            url    : app.globalData.baseUrl + '/home/article/lists',
+            method : 'GET',
+            data   : {
+                type     : '轮播图',
+                page_num : 1,
+                page_size: 3
+            },
+            header : {
+                'content-type': 'application/form-data'
+            },
+            success: function (res) {
+                if (res.data.code === 200) {
+                    that.setData({
+                        pictureArticle: res.data.data
+                    });
+                }
+            }
+        });
+
+        wx.request({
+            url    : app.globalData.baseUrl + '/home/article/lists',
+            method : 'GET',
+            data   : {
+                page_num : 1,
+                page_size: 10
+            },
+            header : {
+                'content-type': 'application/form-data'
+            },
+            success: function (res) {
+                if (res.data.code === 200) {
+                    that.setData({
+                        latestArticle: res.data.data
+                    });
+                }
+            }
+        });
+
+        setTimeout(()=>{
+            wx.stopPullDownRefresh()
+        },2000)
 
     },
 
