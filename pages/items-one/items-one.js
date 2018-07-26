@@ -140,8 +140,8 @@ Page({
      */
     onShareAppMessage: function () {
         return {
-            title: this.data.type,
-            path: '/pages/list-one/list-one?type='+this.data.type
+            title: "加拿大温哥华生子",
+            path: '/pages/index/index'
         }
     }
 });

@@ -115,14 +115,8 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-        let title
-        if(this.data.type==="轮播图"){
-            title="加拿大温哥华生子"
-        }else {
-            title=this.data.type
-        }
         return {
-            title: title,
+            title: this.dataarticleDetail.title,
             path: '/pages/detail/detail?id='+this.data.id
         }
     }
