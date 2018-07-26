@@ -176,6 +176,9 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: '加拿大温哥华生子',
+            path: '/pages/index/index'
+        }
     }
 });
