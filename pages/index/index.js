@@ -21,7 +21,7 @@ Page({
 
     call() {
         wx.makePhoneCall({
-            phoneNumber: '10086'
+            phoneNumber: '18037778796'
         });
     },
     msg() {
