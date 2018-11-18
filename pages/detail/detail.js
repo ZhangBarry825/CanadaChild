@@ -10,7 +10,9 @@ Page({
         baseUrl:app.globalData.baseUrl,
         id:'',
         type:'',
-        articleDetail:null
+        articleDetail:null,
+        imgalist:[ 'http://canada-api.umsoft.cn/static/images/ewm.jpg',],
+        ewm:'../../assets/images/ewm.jpg'
     },
     //格式化时间
     timeFormat(cellValue){
@@ -67,11 +69,77 @@ Page({
                 }
             }
         });
+
+        //获取小程序码
+        // wx.request({
+        //     url    : 'https://api.weixin.qq.com/cgi-bin/token',
+        //     method : 'GET',
+        //     data   : {
+        //         grant_type:'client_credential',
+        //         appid:'wx4fbfb8b5724aa15d',
+        //         secret:'552df67b9fa752176f9cbadf24ab1c39',
+        //     },
+        //     header : {
+        //         'content-type': 'application/form-data' // 默认值
+        //     },
+        //     success: function (res) {
+        //         let access_token=res.data.access_token
+        //         wx.request({
+        //             url    : 'https://api.weixin.qq.com/wxa/getwxacode?access_token='+access_token,
+        //             method : 'POST',
+        //             data   : {
+        //                 path:'pages/index/index',
+        //             },
+        //             header : {
+        //                 'content-type': 'application/json;charset=utf-8' // 默认值
+        //             },
+        //             success:  (response) =>{
+        //                // console.log(response.data,9999)
+        //                 this.ewm=response.data
+        //                 console.log(this.ewm,444)
+        //
+        //
+        //
+        //             }
+        //         })
+        //     }
+        // })
     },
 
+
+    //识别二维码
+    previewImage: function(e) {
+        wx.setClipboardData({
+            data: 'https://canada-api.umsoft.cn/static/webShare/index.html?id='+this.data.id,
+            success (res) {
+            }
+        })
+        // console.log(this.data.ewm)
+        //
+        // wx.previewImage({
+        //     current: this.data.imgalist[0],
+        //     urls: this.data.imgalist
+        // })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
+
+    handleShare(){
+        // wx.navigateTo({
+        //     url: '/pages/share/share'
+        // })
+        wx.setClipboardData({
+            data: 'https://canada-api.umsoft.cn/static/webShare/index.html?id='+this.data.id,
+            success (res) {
+                wx.getClipboardData({
+                    success (res) {
+                        console.log(res.data) // data
+                    }
+                })
+            }
+        })
+    },
     onReady: function () {
 
     },

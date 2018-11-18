@@ -42,12 +42,12 @@ Page({
                 'content-type': 'application/form-data'
             },
             success: function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.code === 200) {
                     that.setData({
                         articleList : res.data.data.rows
                     })
-                    console.log(that.data.articleList)
+                    // console.log(that.data.articleList)
                 }
 
             }
@@ -94,7 +94,7 @@ Page({
      */
     onReachBottom: function () {
         let that = this
-        console.log('到底了')
+        // console.log('到底了')
         wx.showLoading({
             title: '加载中',
         })
@@ -110,14 +110,14 @@ Page({
                 'content-type': 'application/form-data'
             },
             success: function (res) {
-                console.log(res.data);
+                // console.log(res.data);
 
                 if (res.data.code === 200) {
-                    console.log(res.data)
+                    // console.log(res.data)
                     let newValue=that.data.articleList
                     newValue=newValue.concat(res.data.data.rows)
-                    console.log('newValue:')
-                    console.log(newValue)
+                    // console.log('newValue:')
+                    // console.log(newValue)
                     that.setData({
                         articleList : newValue,
                         page:that.data.page+1

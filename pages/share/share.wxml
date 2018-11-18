@@ -1,0 +1,3 @@
+<!--pages/share/share.wxml-->
+
+<web-view class="webShare" src="https://canada-api.umsoft.cn/"> </web-view>

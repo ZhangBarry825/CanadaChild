@@ -320,3 +320,22 @@ based on https://chromium.googlesource.com/chromium/blink/+/master/Source/core/c
 .page .detail .html .html-view {
   font-size: 28rpx;
 }
+.page .ewm {
+  width: 100%;
+  padding: 80rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.page .ewm .ewm-img {
+  width: 300rpx;
+  height: 300rpx;
+}
+.page .ewm .ewm-text {
+  font-size: 30rpx;
+}
+.page .webShare {
+  width: 100%;
+  height: 100rpx;
+  background-color: goldenrod;
+}
+/*# sourceMappingURL=detail.wxss.map */

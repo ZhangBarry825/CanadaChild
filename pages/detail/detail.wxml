@@ -13,4 +13,10 @@
         </view>
     </view>
 
+    <view class="ewm">
+        <image class="ewm-img"  src="../../assets/images/ewm.jpg" bindtap="previewImage"> </image>
+        <view class="ewm-text">扫一扫识别二维码关注</view>
+        <view class="ewm-text" >加拿大温哥华生子小程序</view>
+    </view>
+
 </view>
