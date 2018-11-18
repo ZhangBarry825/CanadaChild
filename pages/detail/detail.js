@@ -12,7 +12,8 @@ Page({
         type:'',
         articleDetail:null,
         imgalist:[ 'http://canada-api.umsoft.cn/static/images/ewm.jpg',],
-        ewm:'../../assets/images/ewm.jpg'
+        ewm:'../../assets/images/ewm.jpg',
+        ifLoaded:false
     },
     //格式化时间
     timeFormat(cellValue){
@@ -47,6 +48,9 @@ Page({
                 title: that.data.type
             });
         }
+        wx.showLoading({
+            title: '加载中',
+        })
         wx.request({
             url    : app.globalData.baseUrl + '/home/article/detail',
             method : 'GET',
@@ -56,8 +60,11 @@ Page({
             header : {
                 'content-type': 'application/form-data' // 默认值
             },
-            success: function (res) {
-                console.log(res.data);
+            success:  (res)=> {
+                wx.hideLoading()
+                this.setData({
+                    ifLoaded: true
+                })
                 if (res.data.code === 200) {
                     res.data.data.update_time=that.timeFormat(res.data.data.update_time)
                     res.data.data.create_time=that.timeFormat(res.data.data.create_time)
